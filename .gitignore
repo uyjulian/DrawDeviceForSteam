@@ -1,49 +1,18 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
+*.pdb
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
 *.lib
+*.exp
+*.log
+*.tlog
+*.sdf
+*.suo
+*.user
+*.res
+*.sbr
+.vs/
+*.dll
+*.o
+*.7z
+*.dep.make
+build-*/
 
-# Executables
-*.exe
-*.out
-*.app
-
-# Projects
-vs2005/
-vs2008/
-vs2010/
-vs2012/
-vs2013/
-vs2015/
-vs2017/
-vs2019/
-
-# Output
-bin/
-
-# Test
-data/
-plugin/
