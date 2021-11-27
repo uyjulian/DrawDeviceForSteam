@@ -386,6 +386,7 @@ IDirect3D9 * Krkr2DrawDeviceWrapper::GetDirect3DObjectNoAddRef()
 //---------------------------------------------------------------------------
 // ãgó¢ãgó¢2óp GetWindowDispatch åƒÇ—èoÇµãKñÒãzé˚
 
+#ifdef _M_IX86
 #ifdef _MSC_VER
 
 #pragma optimize("", off)
@@ -417,5 +418,10 @@ iTJSDispatch2 * __attribute__((optimize("O0"))) k2z_tTVPWindow::GetWindowDispatc
 #else
 #error GetWindowDispatch : compiler not supported.
 // do nothing
+#endif
+#else
+iTJSDispatch2 * k2z_tTVPWindow::GetWindowDispatch(k2_iTVPWindow *window) {
+	return NULL;
+}
 #endif
 
