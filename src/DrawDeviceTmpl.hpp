@@ -51,6 +51,6 @@ public: \
 	~CLASSNAME() { if (DDI) DDI->Destruct(); ClearInterface(); } \
 	virtual void onDeviceDestruct() { ClearInterface(); } \
 	static tjs_error CreateNew(iTJSDispatch2 *objthis, CLASSNAME* &inst, tjs_int num, tTJSVariant **args) { inst = Create(num, args); return TJS_S_OK; } \
-	static bool Link(bool link) { return LinkOthers(SimpleBinder::BindUtil(link).Class(GetName(), &CreateNew).Property(TJS_W("interface"), &GetInterface, 0)); } \
+	static bool Link(bool link) { return LinkOthers(SimpleBinder::BindUtil(link).Class(GetName(), &CLASSNAME::CreateNew).Property(TJS_W("interface"), &CLASSNAME::GetInterface, 0)); } \
 	tjs_error GetInterface(tTJSVariant *result) const { if (result) *result = DDI ? DDI->GetInterface() : 0; return TJS_S_OK; }
 

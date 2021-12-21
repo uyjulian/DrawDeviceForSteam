@@ -44,8 +44,8 @@ private:
 
 	static bool LinkOthers(SimpleBinder::BindUtil &bind) {
 		return (bind
-				.Function(TJS_W("recreate"),    &Recreate)
-				.Function(TJS_W("present"),     &Present)
+				.Function(TJS_W("recreate"),    &DrawDeviceClass::Recreate)
+				.Function(TJS_W("present"),     &DrawDeviceClass::Present)
 				.IsValid());
 	}
 
@@ -93,10 +93,10 @@ struct TJSTestCode {
 	static bool Link(bool link) {
 		return (
 			SimpleBinder::BindUtil(TJS_W("Debug"), link)
-			.Function(TJS_W("CreateMessageMapFile"),  &CreateMessageMapFile)
-			.Function(TJS_W("TestDDAddLog"),          &AddLog)
-			.Function(TJS_W("TestDDAddImportantLog"), &AddImportantLog)
-			.Function(TJS_W("TestDDThrowException"),  &ThrowException)
+			.Function(TJS_W("CreateMessageMapFile"),  &TJSTestCode::CreateMessageMapFile)
+			.Function(TJS_W("TestDDAddLog"),          &TJSTestCode::AddLog)
+			.Function(TJS_W("TestDDAddImportantLog"), &TJSTestCode::AddImportantLog)
+			.Function(TJS_W("TestDDThrowException"),  &TJSTestCode::ThrowException)
 			.IsValid());
 	}
 };
