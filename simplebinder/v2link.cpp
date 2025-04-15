@@ -7,7 +7,7 @@
 #pragma comment(linker, "/EXPORT:V2Link=_V2Link@4")
 #pragma comment(linker, "/EXPORT:V2Unlink=_V2Unlink@0")
 #endif
-#if defined(__GNUC__) && !defined(__clang__)
+#ifdef __GNUC__
 asm (".section .drectve");
 asm (".ascii \" -export:V2Link=V2Link@4 -export:V2Unlink=V2Unlink@0\"");
 #endif
